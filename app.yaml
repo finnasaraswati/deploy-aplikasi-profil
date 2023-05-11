@@ -1,20 +1,11 @@
 runtime: php73
 
-instance_class: F1
-api_version : 1
-threadsafe : true
-
-automatic_scaling:
-  max_instance: 1
-  min_instance: 0
-
 handlers:
 - url: .css
   static_dir: css
   secure: always
   redirect_http_response_code: 301
   
-# Serve images as static resources.
 - url: /img/(.+\.(gif|png|jpg))$
   static_files: img/\1
   upload: img/.*\.(gif|png|jpg)$
